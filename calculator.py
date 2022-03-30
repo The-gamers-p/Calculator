@@ -1,1 +1,3 @@
+x = "fantasic"
 
+print(x)
