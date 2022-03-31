@@ -6,12 +6,14 @@ from tkinter import ttk, Text
 root = Tk()
 root.title("Calculator")
 
-
+##You need a text font to change size
 test = Label(root,
-    text = "This is a test label part 1")
+    text = "This is a test label part 1",
+    font = ("helvetica", 20))
 
 test2 = Label(root,
-    text = "This is a test label part 2")
+    text = "This is a test label part 2",
+    font = (50))
 
 
 ## Grid Example
@@ -20,6 +22,7 @@ test2 = Label(root,
 
 
 ##Pack Example
+## Sides placement when and where are important
 test.pack(side = LEFT)
 test2.pack(side = TOP)
 
