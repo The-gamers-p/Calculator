@@ -6,25 +6,27 @@ from tkinter import ttk, Text
 root = Tk()
 root.title("Calculator")
 
-##You need a text font to change size
-test = Label(root,
-    text = "This is a test label part 1",
-    font = ("helvetica", 20))
+width = 500
+height = 700
+root.geometry(f'{width}x{height}')
+root.resizable(False, False)
 
-test2 = Label(root,
-    text = "This is a test label part 2",
-    font = (50))
-
-
-## Grid Example
-# test.grid(row = 0, column=0)
-# test2.grid(row=1, column = 1)
+def Copy(t):
+    screen1.config(text=text1.get(1.0, 'end-1c'))
+    screen1.update()
 
 
-##Pack Example
-## Sides placement when and where are important
-test.pack(side = LEFT)
-test2.pack(side = TOP)
+screen1 = Label(root,
+    text = "",)
+screen1.grid(row=0, column=0)
 
+text1 = Text(width = 20, height=1)
+text1.grid(row = 1, column = 0)
+    
+button = Button(root,
+    text = "Copy")
+button.grid(row = 2, column = 0)
+
+button.bind("<Button-1>",Copy)
 
 root.mainloop()
